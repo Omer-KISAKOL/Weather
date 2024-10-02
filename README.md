@@ -1,8 +1,22 @@
 # React + Vite
+**API key:** fe5415e6fcb64e98caf1a33cd665eac3
+# Proje Özeti
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projenin **React & Redux** ile geliştirilmiş olması beklenmektedir.
 
-Currently, two official plugins are available:
+Proje, açılış olarak kullanıcıdan bir **API Key** almalı ve bu **API Key** tarayıcı kapatılana veya tab kapatılana kadar tekrar sorulmamalı, sayfa yenilense de tekrar istenmemelidir.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Eğer yeni tab açılır veya tarayıcı kapatılıp açılırsa tekrar **API Key** istenmelidir.
+
+## API
+API olarak [OpenWeatherMap](https://openweathermap.org/current) kullanılmalıdır. **API Key** istenirse README'de paylaşılabilir.
+
+**API Key** alındıktan sonraki sayfada Türkiye illerinin seçimine göre, seçilen il özelinde anlık hava durumu bilgileri ekranda gösterilmelidir.
+
+İsteğe göre, il seçimi yerine Türkiye haritası çıkarılarak kullanıcının seçim yapması sağlatılabilir. Yine isteğe göre, il seçimi yerine bir harita üzerinden belirli bir alan da seçtirilebilir.
+
+Yanlış **API Key** veya bağlantı sorunları sebebiyle gösterimlerin yapılamama durumları karşılanmalı ve kullanıcı düzgün şekilde bilgilendirilmelidir.
+
+İsteğe göre ek özellikler eklenebilir.
+
+Tasarım olarak **Bootstrap** üzerinden opensource bir tema giydirilebilir veya kendi tasarımınız uygulanabilir.
