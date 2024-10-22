@@ -16,10 +16,14 @@ const weatherSlice = createSlice({
         status: 'idle',
         error: null,
         apiKey: '',
+        cityName: '',
     },
     reducers: {
         setApiKey: (state, action) => {
             state.apiKey = action.payload; // Redux state'ini güncelle
+        },
+        setCityName: (state, action) => {
+            state.cityName = action.payload; // Redux state'ini güncelle
         },
     },
     extraReducers: (builder) => {
@@ -38,5 +42,5 @@ const weatherSlice = createSlice({
     },
 });
 
-export const { setApiKey } = weatherSlice.actions;
+export const { setApiKey, setCityName} = weatherSlice.actions;
 export default weatherSlice.reducer;

@@ -15,7 +15,7 @@ const APIKeyPage = () => {
     useEffect(() => {
         const storedApiKey = sessionStorage.getItem('weatherApiKey');
         if (storedApiKey) {
-            navigate('/weather');
+            navigate('/map');
         }
     }, [navigate]);
 
@@ -63,7 +63,7 @@ const APIKeyPage = () => {
 
         // Geçerli API Key ise, sessionStorage'a kaydet ve yönlendir
         sessionStorage.setItem('weatherApiKey', weather.apiKey);
-        navigate('/weather');
+        navigate('/map');
     };
 
     return (

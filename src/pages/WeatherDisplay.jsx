@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchWeatherData } from '../redux/weatherSlice.jsx';
-import MapSelection from "../components/MapSelection.jsx";
+import citiesData from '../data/cities.json'
 
 const WeatherDisplay = () => {
 
@@ -13,17 +13,23 @@ const WeatherDisplay = () => {
 
     console.log(weatherData);
     console.log(weatherStatus);
+    // console.log(weather.cityName)
 
-    const lat = 40.766666;
-    const lon = 29.916668;
     const apiKey = weather.apiKey;
 
     // Bileşen ilk yüklendiğinde hava durumu verisini çek
     useEffect(() => {
-        if (weatherStatus === 'idle') {
-            dispatch(fetchWeatherData({ lat, lon, apiKey }));
+        const city = citiesData.find(c => c.name === weather.cityName);
+        const { latitude, longitude } = city;
+        // console.log(`Lat: ${latitude}, Lon: ${longitude}`);
+        if (city) {
+            if (latitude && longitude) {
+                dispatch(fetchWeatherData({ lat: latitude, lon: longitude, apiKey }));
+            }
+        } else {
+            console.log('City not found');
         }
-    }, [dispatch, weatherStatus, lat, lon]);
+    }, [weather.cityName]);
 
 
     if (weatherStatus === 'loading') {
@@ -36,9 +42,6 @@ const WeatherDisplay = () => {
 
     return (
         <div>
-            <div>
-                <MapSelection/>
-            </div>
             {weatherData ? (
                 <>
                     <h2>{weatherData.name} Hava Durumu</h2>

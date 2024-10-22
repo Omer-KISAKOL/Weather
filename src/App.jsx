@@ -4,6 +4,7 @@ import ProtectedRoute from './ProtectedRoute.jsx';
 import ApiKeyInput from "./pages/ApiKeyInput.jsx";
 import { Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
+import MapSelection from "./pages/MapSelection.jsx";
 
 
 function App() {
@@ -13,7 +14,15 @@ function App() {
               {/* API Key girilen sayfa */}
               <Route path="/login" element={<ApiKeyInput />} />
 
-              {/* Korunan rota: Sadece API Key girilirse erişilebilir */}
+               {/*Korunan rota: Sadece API Key girilirse erişilebilir */}
+              <Route
+                  path="/map"
+                  element={
+                      <ProtectedRoute>
+                          <MapSelection />
+                      </ProtectedRoute>
+                  }
+              />
               <Route
                   path="/weather"
                   element={
