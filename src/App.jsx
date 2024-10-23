@@ -1,10 +1,11 @@
-import './App.css'
 import WeatherDisplay from "./pages/WeatherDisplay.jsx";
 import ProtectedRoute from './ProtectedRoute.jsx';
 import ApiKeyInput from "./pages/ApiKeyInput.jsx";
 import { Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
-import MapSelection from "./pages/MapSelection.jsx";
+import CitiesSelection from "./pages/CitiesSelection.jsx";
+import Map from "./components/Map.jsx";
+import Cities from "./components/Cities.jsx";
 
 
 function App() {
@@ -16,13 +17,17 @@ function App() {
 
                {/*Korunan rota: Sadece API Key girilirse erişilebilir */}
               <Route
-                  path="/map"
+                  path="/citiesSelection"
                   element={
                       <ProtectedRoute>
-                          <MapSelection />
+                          <CitiesSelection />
                       </ProtectedRoute>
                   }
-              />
+              >
+                  <Route path="map" element={<Map />} />
+                  <Route path="cities" element={<Cities />} />
+              </Route>
+
               <Route
                   path="/weather"
                   element={

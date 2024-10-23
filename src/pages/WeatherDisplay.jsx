@@ -13,7 +13,6 @@ const WeatherDisplay = () => {
 
     console.log(weatherData);
     console.log(weatherStatus);
-    // console.log(weather.cityName)
 
     const apiKey = weather.apiKey;
 
@@ -46,7 +45,7 @@ const WeatherDisplay = () => {
                 <>
                     <h2>{weatherData.name} Hava Durumu</h2>
                     <p>Sıcaklık: {Math.round(weatherData.main.temp - 273.15)}°C</p> {/* Kelvin'i Celsius'a çevirdik */}
-                    <p>Hava Durumu: {weatherData.weather[0].description} -- {weatherData.weather[0].main}</p>
+                    <p>Hava Durumu: {weatherData.weather[0].description}</p>
                 </>
             ) : (
                 <p>Veri bulunamadı</p>

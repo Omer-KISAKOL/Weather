@@ -4,9 +4,10 @@ export const fetchWeather = async (lat, lon) => {
         throw new Error('API Key bulunamadı');
     }
 
+
     try {
         const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=tr&appid=${apiKey}`
         );
 
         if (!response.ok) {
