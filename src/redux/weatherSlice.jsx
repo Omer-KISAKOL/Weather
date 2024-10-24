@@ -16,7 +16,7 @@ const weatherSlice = createSlice({
         status: 'idle',
         error: null,
         apiKey: '',
-        cityName: '',
+        cityName: localStorage.getItem('cityName') || '', // LocalStorage'dan cityName'i çek
     },
     reducers: {
         setApiKey: (state, action) => {
@@ -24,6 +24,7 @@ const weatherSlice = createSlice({
         },
         setCityName: (state, action) => {
             state.cityName = action.payload; // Redux state'ini güncelle
+            localStorage.setItem('cityName', action.payload); // LocalStorage'a cityName'i kaydet
         },
     },
     extraReducers: (builder) => {

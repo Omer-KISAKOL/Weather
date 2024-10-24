@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children }) => {
 
     // Eğer sessionStorage'da API Key yoksa, kullanıcıyı API Key sayfasına yönlendir
     if (!apiKey) {
-        return <Navigate to="/apikey" />;
+        return <Navigate to="/login" />;
     }
 
     // Eğer API Key varsa, bileşeni render et
