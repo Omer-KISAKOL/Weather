@@ -1,6 +1,6 @@
 import React from 'react';
 import citiesData from '../data/cities.json'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import { setCityName } from '../redux/weatherSlice.jsx';
 import {useNavigate} from "react-router-dom";
 
