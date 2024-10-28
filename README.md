@@ -16,7 +16,3 @@ API olarak [OpenWeatherMap](https://openweathermap.org/current) kullanılmalıd�
 İsteğe göre, il seçimi yerine Türkiye haritası çıkarılarak kullanıcının seçim yapması sağlatılabilir. Yine isteğe göre, il seçimi yerine bir harita üzerinden belirli bir alan da seçtirilebilir.
 
 Yanlış **API Key** veya bağlantı sorunları sebebiyle gösterimlerin yapılamama durumları karşılanmalı ve kullanıcı düzgün şekilde bilgilendirilmelidir.
-
-İsteğe göre ek özellikler eklenebilir.
-
-Tasarım olarak **Bootstrap** üzerinden opensource bir tema giydirilebilir veya kendi tasarımınız uygulanabilir.
